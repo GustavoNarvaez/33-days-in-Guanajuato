@@ -1,0 +1,795 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>XXXXXXXXXXXXXXXXXXXXXXXX</title>
+
+    <style>
+
+        /* =========================
+           RESET
+        ========================= */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: #ffffff;
+            color: #111111;
+            font-family: Georgia, "Times New Roman", serif;
+        }
+
+
+        /* =========================
+           ESTRUCTURA PRINCIPAL
+        ========================= */
+
+        .pagina {
+            min-height: 100vh;
+            display: grid;
+
+            grid-template-columns:
+                280px
+                minmax(0, 1fr);
+        }
+
+
+        /* =========================
+           MENU LATERAL
+        ========================= */
+
+        .menu {
+            position: fixed;
+
+            left: 0;
+            top: 0;
+
+            width: 280px;
+            height: 100vh;
+
+            padding: 35px 30px;
+
+            background: #ffffff;
+
+            border-right: 1px solid #111111;
+
+            z-index: 100;
+        }
+
+
+        /* LOGO / TITULO */
+
+        .logo {
+            display: block;
+
+            font-size: 28px;
+
+            line-height: 1.1;
+
+            text-decoration: none;
+
+            color: #111111;
+
+            margin-bottom: 60px;
+        }
+
+
+        /* NAVEGACION */
+
+        .navegacion {
+            list-style: none;
+        }
+
+        .navegacion li {
+            margin-bottom: 18px;
+        }
+
+        .navegacion a {
+            color: #111111;
+
+            text-decoration: none;
+
+            font-size: 22px;
+
+            transition: opacity 0.2s;
+        }
+
+        .navegacion a:hover {
+            opacity: 0.45;
+        }
+
+
+        /* =========================
+           CONTENIDO
+        ========================= */
+
+        .contenido {
+
+            grid-column: 2;
+
+            padding: 70px 8vw 100px 8vw;
+
+            min-width: 0;
+        }
+
+
+        /* CABECERA */
+
+        .cabecera {
+            min-height: 90vh;
+
+            display: flex;
+
+            flex-direction: column;
+
+            justify-content: center;
+
+            border-bottom: 1px solid #111111;
+        }
+
+        .cabecera h1 {
+
+            font-size: clamp(
+                50px,
+                9vw,
+                140px
+            );
+
+            line-height: 0.9;
+
+            font-weight: normal;
+
+            margin-bottom: 40px;
+        }
+
+        .cabecera p {
+
+            font-size: 24px;
+
+            max-width: 700px;
+
+            line-height: 1.4;
+        }
+
+
+        /* =========================
+           SECCIONES
+        ========================= */
+
+        .seccion {
+
+            padding: 120px 0;
+
+            border-bottom: 1px solid #111111;
+        }
+
+        .seccion h2 {
+
+            font-size: 60px;
+
+            font-weight: normal;
+
+            margin-bottom: 50px;
+        }
+
+        .seccion p {
+
+            font-size: 20px;
+
+            line-height: 1.7;
+
+            max-width: 850px;
+
+            margin-bottom: 25px;
+        }
+
+
+        /* =========================
+           CAJAS
+        ========================= */
+
+        .rejilla {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 30px;
+        }
+
+        .caja {
+
+            border: 1px solid #111111;
+
+            min-height: 250px;
+
+            padding: 25px;
+        }
+
+        .caja h3 {
+
+            font-size: 28px;
+
+            font-weight: normal;
+
+            margin-bottom: 30px;
+        }
+
+        .caja p {
+
+            font-size: 17px;
+
+            line-height: 1.5;
+        }
+
+
+        /* =========================
+           IMAGEN
+        ========================= */
+
+        .imagen {
+
+            width: 100%;
+
+            height: 500px;
+
+            background: #eeeeee;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            margin: 50px 0;
+        }
+
+        .imagen span {
+
+            font-size: 40px;
+
+            color: #777777;
+        }
+
+
+        /* =========================
+           ENLACES
+        ========================= */
+
+        .boton {
+
+            display: inline-block;
+
+            padding: 15px 25px;
+
+            border: 1px solid #111111;
+
+            color: #111111;
+
+            text-decoration: none;
+
+            font-size: 18px;
+
+            transition: all 0.2s;
+        }
+
+        .boton:hover {
+
+            background: #111111;
+
+            color: #ffffff;
+        }
+
+
+        /* =========================
+           PIE
+        ========================= */
+
+        footer {
+
+            padding: 80px 0;
+
+            font-size: 18px;
+        }
+
+
+        /* =========================
+           BOTON MENU MOVIL
+        ========================= */
+
+        .menu-movil {
+
+            display: none;
+
+            position: fixed;
+
+            top: 15px;
+
+            right: 15px;
+
+            z-index: 200;
+
+            background: white;
+
+            border: 1px solid black;
+
+            padding: 10px 15px;
+
+            cursor: pointer;
+
+            font-family: Georgia, serif;
+
+            font-size: 18px;
+        }
+
+
+        /* =========================
+           RESPONSIVE
+        ========================= */
+
+        @media (max-width: 900px) {
+
+            .pagina {
+
+                display: block;
+            }
+
+            .menu-movil {
+
+                display: block;
+            }
+
+            .menu {
+
+                width: 100%;
+
+                height: auto;
+
+                position: fixed;
+
+                transform: translateY(-100%);
+
+                transition: transform 0.3s;
+
+                border-right: none;
+
+                border-bottom: 1px solid #111111;
+
+                padding: 25px;
+            }
+
+            .menu.abierto {
+
+                transform: translateY(0);
+            }
+
+            .logo {
+
+                margin-bottom: 30px;
+            }
+
+            .navegacion a {
+
+                font-size: 20px;
+            }
+
+            .contenido {
+
+                padding: 30px 25px 70px 25px;
+            }
+
+            .cabecera {
+
+                min-height: 90vh;
+            }
+
+            .cabecera h1 {
+
+                font-size: 70px;
+            }
+
+            .seccion h2 {
+
+                font-size: 45px;
+            }
+
+            .rejilla {
+
+                grid-template-columns: 1fr;
+            }
+
+            .imagen {
+
+                height: 300px;
+            }
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+
+<!-- =========================
+     BOTON MOVIL
+========================= -->
+
+<button
+    class="menu-movil"
+    onclick="abrirMenu()">
+
+    X X X
+
+</button>
+
+
+
+<div class="pagina">
+
+
+    <!-- =========================
+         MENU
+    ========================= -->
+
+    <nav class="menu" id="menu">
+
+        <a href="#inicio" class="logo">
+
+            XXXXXXXXXXXXXXXX
+
+        </a>
+
+
+        <ul class="navegacion">
+
+            <li>
+                <a href="#inicio">
+                    XXXXXXXXX
+                </a>
+            </li>
+
+            <li>
+                <a href="#acerca">
+                    XXXXXXXXX
+                </a>
+            </li>
+
+            <li>
+                <a href="#proyectos">
+                    XXXXXXXXX
+                </a>
+            </li>
+
+            <li>
+                <a href="#textos">
+                    XXXXXXXXX
+                </a>
+            </li>
+
+            <li>
+                <a href="#contacto">
+                    XXXXXXXXX
+                </a>
+            </li>
+
+        </ul>
+
+    </nav>
+
+
+
+    <!-- =========================
+         CONTENIDO
+    ========================= -->
+
+    <main class="contenido">
+
+
+        <!-- =========================
+             INICIO
+        ========================= -->
+
+        <section
+            id="inicio"
+            class="cabecera">
+
+            <h1>
+
+                XXXXXXXXXXXXXXXXXXXXX
+
+            </h1>
+
+            <p>
+
+                XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+                XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+                XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+            </p>
+
+        </section>
+
+
+
+        <!-- =========================
+             ACERCA
+        ========================= -->
+
+        <section
+            id="acerca"
+            class="seccion">
+
+            <h2>
+
+                XXXXXXXXXXXXX
+
+            </h2>
+
+            <p>
+
+                XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+                XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+                XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+            </p>
+
+            <p>
+
+                XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+                XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+                XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+            </p>
+
+
+            <div class="imagen">
+
+                <span>
+                    XXXXXXXXX
+                </span>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================
+             PROYECTOS
+        ========================= -->
+
+        <section
+            id="proyectos"
+            class="seccion">
+
+            <h2>
+
+                XXXXXXXXXXXXX
+
+            </h2>
+
+
+            <div class="rejilla">
+
+
+                <article class="caja">
+
+                    <h3>
+                        XXXXXXXXX
+                    </h3>
+
+                    <p>
+
+                        XXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+                        XXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+                        XXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+                    </p>
+
+                </article>
+
+
+
+                <article class="caja">
+
+                    <h3>
+                        XXXXXXXXX
+                    </h3>
+
+                    <p>
+
+                        XXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+                        XXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+                        XXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+                    </p>
+
+                </article>
+
+
+
+                <article class="caja">
+
+                    <h3>
+                        XXXXXXXXX
+                    </h3>
+
+                    <p>
+
+                        XXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+                        XXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+                        XXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+                    </p>
+
+                </article>
+
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================
+             TEXTOS
+        ========================= -->
+
+        <section
+            id="textos"
+            class="seccion">
+
+            <h2>
+
+                XXXXXXXXXXXXX
+
+            </h2>
+
+
+            <p>
+
+                XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+                XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+                XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+                XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+            </p>
+
+
+            <p>
+
+                XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+                XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+                XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+                XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+            </p>
+
+
+            <a
+                href="#"
+                class="boton">
+
+                XXXXXXXXX
+
+            </a>
+
+        </section>
+
+
+
+        <!-- =========================
+             CONTACTO
+        ========================= -->
+
+        <section
+            id="contacto"
+            class="seccion">
+
+            <h2>
+
+                XXXXXXXXXXXXX
+
+            </h2>
+
+            <p>
+
+                XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+            </p>
+
+
+            <p>
+
+                XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+            </p>
+
+
+            <a
+                href="#"
+                class="boton">
+
+                XXXXXXXXXXXXX
+
+            </a>
+
+        </section>
+
+
+
+        <!-- =========================
+             FOOTER
+        ========================= -->
+
+        <footer>
+
+            XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+        </footer>
+
+
+    </main>
+
+</div>
+
+
+
+<!-- =========================
+     JAVASCRIPT
+========================= -->
+
+<script>
+
+    function abrirMenu() {
+
+        const menu =
+            document.getElementById("menu");
+
+        menu.classList.toggle("abierto");
+
+    }
+
+
+    /*
+       Cierra el menú automáticamente
+       cuando se pulsa un enlace.
+    */
+
+    document
+        .querySelectorAll(".navegacion a")
+        .forEach(function(enlace) {
+
+            enlace.addEventListener(
+                "click",
+                function() {
+
+                    document
+                        .getElementById("menu")
+                        .classList.remove("abierto");
+
+                }
+            );
+
+        });
+
+</script>
+
+
+</body>
+
+</html>
