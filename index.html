@@ -4,15 +4,15 @@
 <head>
     <meta charset="UTF-8">
 
-    <!-- MUY IMPORTANTE PARA CELULARES -->
     <meta name="viewport"
           content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 
     <meta name="theme-color" content="#ffffff">
-    <meta name="description"
-          content="XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX">
 
-    <title>XXXXXXXXXXXXXXXXXXXXXXXX</title>
+    <meta name="description"
+          content="33 Days in Guanajuato — viajes, calles, arquitectura, historia y experiencias en Guanajuato Capital.">
+
+    <title>33 Days in Guanajuato</title>
 
     <style>
 
@@ -35,11 +35,7 @@
             background: #ffffff;
             color: #111111;
             font-family: Georgia, "Times New Roman", serif;
-
-            /* Evita desplazamiento horizontal */
             overflow-x: hidden;
-
-            /* Mejor comportamiento táctil */
             -webkit-tap-highlight-color: transparent;
         }
 
@@ -49,11 +45,6 @@
             display: block;
         }
 
-        a,
-        button {
-            -webkit-tap-highlight-color: transparent;
-        }
-
 
         /* =========================
            ESTRUCTURA PRINCIPAL
@@ -61,6 +52,7 @@
 
         .pagina {
             min-height: 100vh;
+
             display: grid;
 
             grid-template-columns:
@@ -95,8 +87,6 @@
         }
 
 
-        /* LOGO */
-
         .logo {
             display: block;
 
@@ -104,13 +94,12 @@
             line-height: 1.1;
 
             text-decoration: none;
+
             color: #111111;
 
             margin-bottom: 60px;
         }
 
-
-        /* NAVEGACION */
 
         .navegacion {
             list-style: none;
@@ -124,9 +113,11 @@
             display: inline-block;
 
             color: #111111;
+
             text-decoration: none;
 
             font-size: 22px;
+
             line-height: 1.3;
 
             transition: opacity 0.2s;
@@ -166,6 +157,7 @@
             border-bottom: 1px solid #111111;
         }
 
+
         .cabecera h1 {
             font-size: clamp(
                 50px,
@@ -181,6 +173,7 @@
 
             overflow-wrap: break-word;
         }
+
 
         .cabecera p {
             font-size: 24px;
@@ -203,6 +196,7 @@
             border-bottom: 1px solid #111111;
         }
 
+
         .seccion h2 {
             font-size: 60px;
 
@@ -210,8 +204,11 @@
 
             margin-bottom: 50px;
 
+            line-height: 1;
+
             overflow-wrap: break-word;
         }
+
 
         .seccion p {
             font-size: 20px;
@@ -223,6 +220,58 @@
             margin-bottom: 25px;
 
             overflow-wrap: break-word;
+        }
+
+
+        /* =========================
+           GALERIA
+        ========================= */
+
+        .galeria {
+            display: grid;
+
+            grid-template-columns:
+                repeat(2, minmax(0, 1fr));
+
+            gap: 25px;
+
+            margin-top: 50px;
+        }
+
+
+        .foto {
+            border: 1px solid #111111;
+
+            overflow: hidden;
+
+            background: #eeeeee;
+        }
+
+
+        .foto img {
+            width: 100%;
+
+            aspect-ratio: 4 / 3;
+
+            object-fit: cover;
+
+            transition: transform 0.3s ease;
+        }
+
+
+        .foto:hover img {
+            transform: scale(1.02);
+        }
+
+
+        .foto figcaption {
+            padding: 15px;
+
+            font-size: 17px;
+
+            line-height: 1.4;
+
+            background: #ffffff;
         }
 
 
@@ -239,6 +288,7 @@
             gap: 30px;
         }
 
+
         .caja {
             border: 1px solid #111111;
 
@@ -249,6 +299,7 @@
             min-width: 0;
         }
 
+
         .caja h3 {
             font-size: 28px;
 
@@ -256,8 +307,11 @@
 
             margin-bottom: 30px;
 
+            line-height: 1.1;
+
             overflow-wrap: break-word;
         }
+
 
         .caja p {
             font-size: 17px;
@@ -269,39 +323,7 @@
 
 
         /* =========================
-           IMAGEN
-        ========================= */
-
-        .imagen {
-            width: 100%;
-
-            height: 500px;
-
-            background: #eeeeee;
-
-            display: flex;
-
-            align-items: center;
-            justify-content: center;
-
-            margin: 50px 0;
-
-            overflow: hidden;
-        }
-
-        .imagen span {
-            font-size: 40px;
-
-            color: #777777;
-
-            text-align: center;
-
-            padding: 20px;
-        }
-
-
-        /* =========================
-           ENLACES / BOTONES
+           ENLACES
         ========================= */
 
         .boton {
@@ -317,13 +339,15 @@
 
             font-size: 18px;
 
-            transition: all 0.2s;
-
             min-height: 48px;
+
+            transition: all 0.2s;
         }
+
 
         .boton:hover {
             background: #111111;
+
             color: #ffffff;
         }
 
@@ -359,13 +383,13 @@
 
             border: 1px solid #111111;
 
-            padding: 12px 16px;
+            padding: 10px 15px;
 
             cursor: pointer;
 
             font-family: Georgia, serif;
 
-            font-size: 18px;
+            font-size: 22px;
 
             min-width: 48px;
             min-height: 48px;
@@ -382,22 +406,24 @@
                 display: block;
             }
 
+
             .menu-movil {
                 display: block;
             }
+
 
             .menu {
                 width: 100%;
 
                 height: auto;
+
                 max-height: 100vh;
 
                 position: fixed;
 
                 transform: translateY(-110%);
 
-                transition:
-                    transform 0.25s ease;
+                transition: transform 0.25s ease;
 
                 border-right: none;
 
@@ -407,17 +433,19 @@
 
                 overflow-y: auto;
 
-                /* Mejora el desplazamiento táctil */
                 -webkit-overflow-scrolling: touch;
             }
+
 
             .menu.abierto {
                 transform: translateY(0);
             }
 
+
             .logo {
                 margin-bottom: 30px;
             }
+
 
             .navegacion a {
                 font-size: 20px;
@@ -425,13 +453,16 @@
                 padding: 8px 0;
             }
 
+
             .contenido {
                 padding: 30px 25px 70px 25px;
             }
 
+
             .cabecera {
                 min-height: 90vh;
             }
+
 
             .cabecera h1 {
                 font-size: clamp(
@@ -441,24 +472,29 @@
                 );
             }
 
+
             .cabecera p {
                 font-size: 21px;
             }
+
 
             .seccion {
                 padding: 90px 0;
             }
 
+
             .seccion h2 {
                 font-size: 45px;
             }
+
 
             .rejilla {
                 grid-template-columns: 1fr;
             }
 
-            .imagen {
-                height: 300px;
+
+            .galeria {
+                grid-template-columns: 1fr;
             }
         }
 
@@ -469,11 +505,6 @@
 
         @media (max-width: 600px) {
 
-            body {
-                width: 100%;
-                overflow-x: hidden;
-            }
-
             .contenido {
                 padding:
                     20px
@@ -482,11 +513,13 @@
                     20px;
             }
 
+
             .cabecera {
                 min-height: 80vh;
 
                 padding-top: 50px;
             }
+
 
             .cabecera h1 {
                 font-size: clamp(
@@ -500,15 +533,18 @@
                 margin-bottom: 25px;
             }
 
+
             .cabecera p {
                 font-size: 18px;
 
                 line-height: 1.55;
             }
 
+
             .seccion {
                 padding: 70px 0;
             }
+
 
             .seccion h2 {
                 font-size: clamp(
@@ -522,15 +558,18 @@
                 margin-bottom: 30px;
             }
 
+
             .seccion p {
                 font-size: 18px;
 
                 line-height: 1.65;
             }
 
+
             .rejilla {
                 gap: 20px;
             }
+
 
             .caja {
                 min-height: auto;
@@ -538,11 +577,13 @@
                 padding: 20px;
             }
 
+
             .caja h3 {
                 font-size: 25px;
 
                 margin-bottom: 20px;
             }
+
 
             .caja p {
                 font-size: 17px;
@@ -550,15 +591,25 @@
                 line-height: 1.6;
             }
 
-            .imagen {
-                height: 220px;
 
-                margin: 35px 0;
+            .galeria {
+                grid-template-columns: 1fr;
+
+                gap: 20px;
+
+                margin-top: 35px;
             }
 
-            .imagen span {
-                font-size: 26px;
+
+            .foto img {
+                aspect-ratio: 4 / 3;
             }
+
+
+            .foto figcaption {
+                font-size: 16px;
+            }
+
 
             .boton {
                 width: 100%;
@@ -570,6 +621,7 @@
                 font-size: 17px;
             }
 
+
             footer {
                 padding: 50px 0;
 
@@ -579,31 +631,37 @@
 
 
         /* =========================
-           CELULARES MUY PEQUEÑOS
+           CELULARES PEQUEÑOS
         ========================= */
 
         @media (max-width: 380px) {
 
             .contenido {
                 padding-left: 16px;
+
                 padding-right: 16px;
             }
+
 
             .cabecera h1 {
                 font-size: 42px;
             }
 
+
             .cabecera p {
                 font-size: 17px;
             }
+
 
             .seccion h2 {
                 font-size: 34px;
             }
 
+
             .seccion p {
                 font-size: 17px;
             }
+
 
             .menu {
                 padding: 20px;
@@ -612,8 +670,7 @@
 
 
         /* =========================
-           REDUCE ANIMACIONES
-           SI EL CELULAR LO PIDE
+           MENOS ANIMACIONES
         ========================= */
 
         @media (prefers-reduced-motion: reduce) {
@@ -622,11 +679,10 @@
                 scroll-behavior: auto;
             }
 
-            .menu {
-                transition: none;
-            }
 
-            .boton {
+            .menu,
+            .boton,
+            .foto img {
                 transition: none;
             }
         }
@@ -666,11 +722,12 @@
             id="menu"
             aria-label="Navegación principal">
 
+
             <a
                 href="https://gustavonarvaez.github.io/33-days-in-Guanajuato/#inicio"
                 class="logo">
 
-                XXXXXXXXXXXXXXXX
+                33 Days in Guanajuato
 
             </a>
 
@@ -679,31 +736,42 @@
 
                 <li>
                     <a href="https://gustavonarvaez.github.io/33-days-in-Guanajuato/#inicio">
-                        XXXXXXXXX
+                        Inicio
                     </a>
                 </li>
+
 
                 <li>
                     <a href="https://gustavonarvaez.github.io/33-days-in-Guanajuato/#acerca">
-                        XXXXXXXXX
+                        Guanajuato
                     </a>
                 </li>
+
 
                 <li>
                     <a href="https://gustavonarvaez.github.io/33-days-in-Guanajuato/#proyectos">
-                        XXXXXXXXX
+                        Lugares
                     </a>
                 </li>
+
+
+                <li>
+                    <a href="https://gustavonarvaez.github.io/33-days-in-Guanajuato/#galeria">
+                        Galería
+                    </a>
+                </li>
+
 
                 <li>
                     <a href="https://gustavonarvaez.github.io/33-days-in-Guanajuato/#textos">
-                        XXXXXXXXX
+                        Textos
                     </a>
                 </li>
 
+
                 <li>
                     <a href="https://gustavonarvaez.github.io/33-days-in-Guanajuato/#contacto">
-                        XXXXXXXXX
+                        Contacto
                     </a>
                 </li>
 
@@ -728,20 +796,22 @@
                 class="cabecera">
 
                 <h1>
-                    XXXXXXXXXXXXXXXXXXXXX
+                    33 Days in Guanajuato
                 </h1>
 
+
                 <p>
-                    XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-                    XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-                    XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+                    Treinta y tres días caminando por Guanajuato Capital:
+                    sus calles, túneles, plazas, edificios, montañas,
+                    cafés, miradores y rincones que aparecen cuando uno
+                    deja de mirar la ciudad como un simple destino turístico.
                 </p>
 
             </section>
 
 
             <!-- =========================
-                 ACERCA
+                 GUANAJUATO
             ========================= -->
 
             <section
@@ -749,27 +819,42 @@
                 class="seccion">
 
                 <h2>
-                    XXXXXXXXXXXXX
+                    Guanajuato
                 </h2>
 
-                <p>
-                    XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-                    XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-                    XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-                </p>
 
                 <p>
-                    XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-                    XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-                    XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+                    Guanajuato Capital es una ciudad construida entre
+                    montañas. Su paisaje urbano está formado por calles
+                    estrechas, callejones, plazas y edificios históricos
+                    que siguen las formas de los cerros.
+                </p>
+
+
+                <p>
+                    La ciudad tiene una relación profunda con la minería.
+                    Durante siglos, la extracción de plata transformó la
+                    región y dejó una arquitectura que combina templos,
+                    casas antiguas, haciendas, túneles y espacios públicos.
+                </p>
+
+
+                <p>
+                    Caminar por Guanajuato significa subir y bajar
+                    constantemente. Una calle puede terminar en un
+                    callejón, una escalera puede conducir a un mirador
+                    y un túnel puede llevar de una parte de la ciudad
+                    a otra.
                 </p>
 
 
                 <div class="imagen">
 
-                    <span>
-                        XXXXXXXXX
-                    </span>
+                    <img
+                        src="1.jpg"
+                        alt="Vista de Guanajuato Capital"
+                        loading="eager"
+                        decoding="async">
 
                 </div>
 
@@ -777,7 +862,7 @@
 
 
             <!-- =========================
-                 PROYECTOS
+                 LUGARES
             ========================= -->
 
             <section
@@ -785,7 +870,7 @@
                 class="seccion">
 
                 <h2>
-                    XXXXXXXXXXXXX
+                    Lugares
                 </h2>
 
 
@@ -795,13 +880,15 @@
                     <article class="caja">
 
                         <h3>
-                            XXXXXXXXX
+                            Teatro Juárez
                         </h3>
 
                         <p>
-                            XXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-                            XXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-                            XXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+                            Uno de los edificios más reconocibles de
+                            Guanajuato. Su fachada combina elementos
+                            neoclásicos y referencias a la arquitectura
+                            europea, mientras que su interior conserva
+                            una decoración teatral característica.
                         </p>
 
                     </article>
@@ -810,13 +897,14 @@
                     <article class="caja">
 
                         <h3>
-                            XXXXXXXXX
+                            Catedral de la Paz
                         </h3>
 
                         <p>
-                            XXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-                            XXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-                            XXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+                            La Basílica Colegiata de Nuestra Señora de
+                            Guanajuato, conocida popularmente como
+                            Catedral de la Paz, se encuentra en el
+                            corazón histórico de la ciudad.
                         </p>
 
                     </article>
@@ -825,16 +913,244 @@
                     <article class="caja">
 
                         <h3>
-                            XXXXXXXXX
+                            Callejones
                         </h3>
 
                         <p>
-                            XXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-                            XXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-                            XXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+                            Los callejones forman parte esencial del
+                            paisaje de Guanajuato. Entre escaleras,
+                            fachadas coloridas y pequeñas plazas aparecen
+                            recorridos que permiten conocer la ciudad
+                            a pie.
                         </p>
 
                     </article>
+
+
+                    <article class="caja">
+
+                        <h3>
+                            El Pípila
+                        </h3>
+
+                        <p>
+                            El monumento a El Pípila se encuentra en
+                            una de las partes altas de Guanajuato y
+                            ofrece una amplia vista de los tejados,
+                            iglesias y montañas que rodean la ciudad.
+                        </p>
+
+                    </article>
+
+
+                    <article class="caja">
+
+                        <h3>
+                            Jardín Unión
+                        </h3>
+
+                        <p>
+                            Este jardín se encuentra frente al Teatro
+                            Juárez y funciona como uno de los espacios
+                            centrales para caminar, descansar y observar
+                            el movimiento cotidiano de Guanajuato.
+                        </p>
+
+                    </article>
+
+
+                    <article class="caja">
+
+                        <h3>
+                            Túneles
+                        </h3>
+
+                        <p>
+                            Los túneles son una de las características
+                            urbanas más particulares de Guanajuato.
+                            Algunos antiguos cauces y caminos fueron
+                            incorporados al sistema vial de la ciudad.
+                        </p>
+
+                    </article>
+
+
+                </div>
+
+            </section>
+
+
+            <!-- =========================
+                 GALERIA
+            ========================= -->
+
+            <section
+                id="galeria"
+                class="seccion">
+
+                <h2>
+                    Galería
+                </h2>
+
+
+                <p>
+                    Diez imágenes para recorrer Guanajuato Capital a
+                    través de sus edificios, calles, plazas y paisajes.
+                    Las fotografías están organizadas del 1 al 10.
+                </p>
+
+
+                <div class="galeria">
+
+
+                    <figure class="foto">
+
+                        <img
+                            src="1.jpg"
+                            alt="Guanajuato Capital — fotografía 1"
+                            loading="lazy"
+                            decoding="async">
+
+                        <figcaption>
+                            01 — Guanajuato Capital
+                        </figcaption>
+
+                    </figure>
+
+
+                    <figure class="foto">
+
+                        <img
+                            src="2.jpg"
+                            alt="Guanajuato Capital — fotografía 2"
+                            loading="lazy"
+                            decoding="async">
+
+                        <figcaption>
+                            02 — Calles de Guanajuato
+                        </figcaption>
+
+                    </figure>
+
+
+                    <figure class="foto">
+
+                        <img
+                            src="3.jpg"
+                            alt="Guanajuato Capital — fotografía 3"
+                            loading="lazy"
+                            decoding="async">
+
+                        <figcaption>
+                            03 — Arquitectura histórica
+                        </figcaption>
+
+                    </figure>
+
+
+                    <figure class="foto">
+
+                        <img
+                            src="4.jpg"
+                            alt="Guanajuato Capital — fotografía 4"
+                            loading="lazy"
+                            decoding="async">
+
+                        <figcaption>
+                            04 — Teatro Juárez
+                        </figcaption>
+
+                    </figure>
+
+
+                    <figure class="foto">
+
+                        <img
+                            src="5.jpg"
+                            alt="Guanajuato Capital — fotografía 5"
+                            loading="lazy"
+                            decoding="async">
+
+                        <figcaption>
+                            05 — Centro histórico
+                        </figcaption>
+
+                    </figure>
+
+
+                    <figure class="foto">
+
+                        <img
+                            src="6.jpg"
+                            alt="Guanajuato Capital — fotografía 6"
+                            loading="lazy"
+                            decoding="async">
+
+                        <figcaption>
+                            06 — Callejones
+                        </figcaption>
+
+                    </figure>
+
+
+                    <figure class="foto">
+
+                        <img
+                            src="7.jpg"
+                            alt="Guanajuato Capital — fotografía 7"
+                            loading="lazy"
+                            decoding="async">
+
+                        <figcaption>
+                            07 — Plazas y jardines
+                        </figcaption>
+
+                    </figure>
+
+
+                    <figure class="foto">
+
+                        <img
+                            src="8.jpg"
+                            alt="Guanajuato Capital — fotografía 8"
+                            loading="lazy"
+                            decoding="async">
+
+                        <figcaption>
+                            08 — Guanajuato entre montañas
+                        </figcaption>
+
+                    </figure>
+
+
+                    <figure class="foto">
+
+                        <img
+                            src="9.jpg"
+                            alt="Guanajuato Capital — fotografía 9"
+                            loading="lazy"
+                            decoding="async">
+
+                        <figcaption>
+                            09 — Miradores
+                        </figcaption>
+
+                    </figure>
+
+
+                    <figure class="foto">
+
+                        <img
+                            src="10.jpg"
+                            alt="Guanajuato Capital — fotografía 10"
+                            loading="lazy"
+                            decoding="async">
+
+                        <figcaption>
+                            10 — Una última mirada a la ciudad
+                        </figcaption>
+
+                    </figure>
 
 
                 </div>
@@ -851,29 +1167,45 @@
                 class="seccion">
 
                 <h2>
-                    XXXXXXXXXXXXX
+                    Textos
                 </h2>
 
-                <p>
-                    XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-                    XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-                    XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-                    XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-                </p>
 
                 <p>
-                    XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-                    XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-                    XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-                    XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+                    Treinta y tres días pueden parecer mucho tiempo para
+                    una ciudad que cabe en un mapa. Pero Guanajuato no
+                    se descubre únicamente siguiendo los lugares que
+                    aparecen en las guías. También está en la caminata
+                    sin rumbo, en una conversación en una plaza, en el
+                    sonido de una campana o en una calle que uno nunca
+                    había visto.
+                </p>
+
+
+                <p>
+                    La ciudad cambia con la hora. Por la mañana las
+                    calles pertenecen a quienes trabajan y abren sus
+                    negocios. Por la tarde las plazas se llenan y por
+                    la noche los edificios iluminados adquieren otra
+                    presencia. Entre una hora y otra, Guanajuato parece
+                    convertirse en una ciudad diferente.
+                </p>
+
+
+                <p>
+                    Este proyecto reúne fotografías y textos de una
+                    estancia prolongada en Guanajuato Capital: una
+                    mirada personal sobre la ciudad y sobre aquello
+                    que aparece cuando se permanece el tiempo suficiente
+                    para dejar de ser solamente visitante.
                 </p>
 
 
                 <a
-                    href="https://gustavonarvaez.github.io/33-days-in-Guanajuato/#"
+                    href="#galeria"
                     class="boton">
 
-                    XXXXXXXXX
+                    Ver la galería
 
                 </a>
 
@@ -889,23 +1221,27 @@
                 class="seccion">
 
                 <h2>
-                    XXXXXXXXXXXXX
+                    Contacto
                 </h2>
 
-                <p>
-                    XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-                </p>
 
                 <p>
-                    XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+                    Para comentarios, colaboraciones, textos, fotografías
+                    o información sobre el proyecto puedes escribir por
+                    correo electrónico.
+                </p>
+
+
+                <p>
+                    Guanajuato Capital, México.
                 </p>
 
 
                 <a
-                    href="https://gustavonarvaez.github.io/33-days-in-Guanajuato/#"
+                    href="mailto:felipedejesusgarciapatino@proton.me"
                     class="boton">
 
-                    XXXXXXXXXXXXX
+                    Escribir por Proton Mail
 
                 </a>
 
@@ -918,7 +1254,7 @@
 
             <footer>
 
-                XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+                33 Days in Guanajuato · Guanajuato Capital, México
 
             </footer>
 
@@ -956,8 +1292,8 @@
 
 
         /*
-         * Cierra el menú automáticamente
-         * al pulsar un enlace.
+         * Cerrar menú al seleccionar
+         * una sección.
          */
 
         document
@@ -990,8 +1326,8 @@
 
 
         /*
-         * Si el usuario cambia a pantalla grande,
-         * cerramos el menú móvil.
+         * Cerrar menú al volver
+         * a pantalla grande.
          */
 
         window.addEventListener(
