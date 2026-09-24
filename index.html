@@ -1,23 +1,13 @@
 <!DOCTYPE html>
-<html lang="es">
-
+<html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
-
-    <title>XXXXXXXXXXXXXXXXXXXXXXXX</title>
+    <title>33 days in Guanajuato Capital</title>
 
     <style>
-
-        /* =========================
-           RESET
-        ========================= */
-
         * {
-            margin: 0;
-            padding: 0;
             box-sizing: border-box;
         }
 
@@ -26,770 +16,452 @@
         }
 
         body {
-            background: #ffffff;
-            color: #111111;
-            font-family: Georgia, "Times New Roman", serif;
+            margin: 0;
+            background: #f5f5f2;
+            color: #111;
+            font-family: Arial, Helvetica, sans-serif;
         }
 
-
-        /* =========================
-           ESTRUCTURA PRINCIPAL
-        ========================= */
-
-        .pagina {
-            min-height: 100vh;
-            display: grid;
-
-            grid-template-columns:
-                280px
-                minmax(0, 1fr);
-        }
-
-
-        /* =========================
-           MENU LATERAL
-        ========================= */
-
-        .menu {
+        nav {
             position: fixed;
-
             left: 0;
             top: 0;
-
-            width: 280px;
+            width: 250px;
             height: 100vh;
-
-            padding: 35px 30px;
-
-            background: #ffffff;
-
-            border-right: 1px solid #111111;
-
-            z-index: 100;
+            background: white;
+            border-right: 1px solid #111;
+            padding: 30px 25px;
+            z-index: 1000;
         }
 
-
-        /* LOGO / TITULO */
-
         .logo {
-            display: block;
-
-            font-size: 28px;
-
-            line-height: 1.1;
-
-            text-decoration: none;
-
-            color: #111111;
-
+            font-size: 27px;
+            font-weight: bold;
+            line-height: 0.95;
             margin-bottom: 60px;
         }
 
-
-        /* NAVEGACION */
-
-        .navegacion {
+        nav ul {
             list-style: none;
+            padding: 0;
+            margin: 0;
         }
 
-        .navegacion li {
+        nav li {
             margin-bottom: 18px;
         }
 
-        .navegacion a {
-            color: #111111;
-
+        nav a {
+            color: #111;
             text-decoration: none;
-
-            font-size: 22px;
-
-            transition: opacity 0.2s;
+            font-size: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
-        .navegacion a:hover {
-            opacity: 0.45;
+        nav a:hover {
+            text-decoration: underline;
         }
 
-
-        /* =========================
-           CONTENIDO
-        ========================= */
-
-        .contenido {
-
-            grid-column: 2;
-
-            padding: 70px 8vw 100px 8vw;
-
-            min-width: 0;
+        main {
+            margin-left: 250px;
         }
 
+        section {
+            min-height: 100vh;
+            padding: 70px 7vw;
+            border-bottom: 1px solid #111;
+        }
 
-        /* CABECERA */
-
-        .cabecera {
-            min-height: 90vh;
-
+        .hero {
+            min-height: 100vh;
             display: flex;
-
             flex-direction: column;
-
             justify-content: center;
-
-            border-bottom: 1px solid #111111;
+            padding-top: 80px;
         }
 
-        .cabecera h1 {
-
-            font-size: clamp(
-                50px,
-                9vw,
-                140px
-            );
-
-            line-height: 0.9;
-
-            font-weight: normal;
-
-            margin-bottom: 40px;
+        .hero h1 {
+            font-size: clamp(55px, 10vw, 150px);
+            line-height: 0.82;
+            letter-spacing: -6px;
+            margin: 0 0 50px 0;
+            max-width: 1100px;
         }
 
-        .cabecera p {
-
-            font-size: 24px;
-
-            max-width: 700px;
-
-            line-height: 1.4;
-        }
-
-
-        /* =========================
-           SECCIONES
-        ========================= */
-
-        .seccion {
-
-            padding: 120px 0;
-
-            border-bottom: 1px solid #111111;
-        }
-
-        .seccion h2 {
-
-            font-size: 60px;
-
-            font-weight: normal;
-
-            margin-bottom: 50px;
-        }
-
-        .seccion p {
-
+        .hero p {
             font-size: 20px;
-
-            line-height: 1.7;
-
-            max-width: 850px;
-
-            margin-bottom: 25px;
-        }
-
-
-        /* =========================
-           CAJAS
-        ========================= */
-
-        .rejilla {
-
-            display: grid;
-
-            grid-template-columns:
-                repeat(3, 1fr);
-
-            gap: 30px;
-        }
-
-        .caja {
-
-            border: 1px solid #111111;
-
-            min-height: 250px;
-
-            padding: 25px;
-        }
-
-        .caja h3 {
-
-            font-size: 28px;
-
-            font-weight: normal;
-
-            margin-bottom: 30px;
-        }
-
-        .caja p {
-
-            font-size: 17px;
-
+            max-width: 650px;
             line-height: 1.5;
         }
 
-
-        /* =========================
-           IMAGEN
-        ========================= */
-
-        .imagen {
-
-            width: 100%;
-
-            height: 500px;
-
-            background: #eeeeee;
-
-            display: flex;
-
-            align-items: center;
-
-            justify-content: center;
-
-            margin: 50px 0;
+        .text-section {
+            max-width: 900px;
         }
 
-        .imagen span {
-
-            font-size: 40px;
-
-            color: #777777;
+        h2 {
+            font-size: 55px;
+            margin-top: 0;
+            margin-bottom: 50px;
+            letter-spacing: -2px;
         }
 
-
-        /* =========================
-           ENLACES
-        ========================= */
-
-        .boton {
-
-            display: inline-block;
-
-            padding: 15px 25px;
-
-            border: 1px solid #111111;
-
-            color: #111111;
-
-            text-decoration: none;
-
-            font-size: 18px;
-
-            transition: all 0.2s;
-        }
-
-        .boton:hover {
-
-            background: #111111;
-
-            color: #ffffff;
-        }
-
-
-        /* =========================
-           PIE
-        ========================= */
-
-        footer {
-
-            padding: 80px 0;
-
-            font-size: 18px;
-        }
-
-
-        /* =========================
-           BOTON MENU MOVIL
-        ========================= */
-
-        .menu-movil {
-
-            display: none;
-
-            position: fixed;
-
-            top: 15px;
-
-            right: 15px;
-
-            z-index: 200;
-
-            background: white;
-
-            border: 1px solid black;
-
-            padding: 10px 15px;
-
-            cursor: pointer;
-
+        .text-section p {
             font-family: Georgia, serif;
-
-            font-size: 18px;
+            font-size: 22px;
+            line-height: 1.6;
         }
 
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+        }
 
-        /* =========================
-           RESPONSIVE
-        ========================= */
+        .gallery figure {
+            margin: 0;
+        }
 
-        @media (max-width: 900px) {
+        .gallery img {
+            width: 100%;
+            height: 500px;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.4s ease;
+        }
 
-            .pagina {
+        .gallery img:hover {
+            transform: scale(1.02);
+        }
 
+        .gallery figcaption {
+            font-size: 13px;
+            margin-top: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .wide-image {
+            margin-top: 50px;
+        }
+
+        .wide-image img {
+            width: 100%;
+            max-height: 800px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .contact {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .contact a {
+            color: #111;
+            font-size: 30px;
+            text-decoration: underline;
+        }
+
+        .menu-button {
+            display: none;
+            position: fixed;
+            right: 15px;
+            top: 15px;
+            z-index: 2000;
+            border: 1px solid #111;
+            background: white;
+            padding: 10px 15px;
+            cursor: pointer;
+        }
+
+        @media (max-width: 800px) {
+
+            nav {
+                transform: translateX(-100%);
+                transition: transform 0.3s ease;
+                width: 250px;
+            }
+
+            nav.open {
+                transform: translateX(0);
+            }
+
+            .menu-button {
                 display: block;
             }
 
-            .menu-movil {
-
-                display: block;
+            main {
+                margin-left: 0;
             }
 
-            .menu {
-
-                width: 100%;
-
-                height: auto;
-
-                position: fixed;
-
-                transform: translateY(-100%);
-
-                transition: transform 0.3s;
-
-                border-right: none;
-
-                border-bottom: 1px solid #111111;
-
-                padding: 25px;
+            section {
+                padding: 60px 25px;
             }
 
-            .menu.abierto {
-
-                transform: translateY(0);
+            .hero h1 {
+                font-size: 65px;
+                letter-spacing: -3px;
             }
 
-            .logo {
-
-                margin-bottom: 30px;
+            h2 {
+                font-size: 42px;
             }
 
-            .navegacion a {
-
-                font-size: 20px;
-            }
-
-            .contenido {
-
-                padding: 30px 25px 70px 25px;
-            }
-
-            .cabecera {
-
-                min-height: 90vh;
-            }
-
-            .cabecera h1 {
-
-                font-size: 70px;
-            }
-
-            .seccion h2 {
-
-                font-size: 45px;
-            }
-
-            .rejilla {
-
+            .gallery {
                 grid-template-columns: 1fr;
             }
 
-            .imagen {
+            .gallery img {
+                height: 400px;
+            }
 
-                height: 300px;
+            .text-section p {
+                font-size: 19px;
             }
         }
-
     </style>
 </head>
 
-
 <body>
 
+    <button class="menu-button" onclick="toggleMenu()">
+        MENU
+    </button>
 
-<!-- =========================
-     BOTON MOVIL
-========================= -->
+    <nav id="navigation">
 
-<button
-    class="menu-movil"
-    onclick="abrirMenu()">
+        <div class="logo">
+            33 DAYS<br>
+            IN GUANAJUATO<br>
+            CAPITAL
+        </div>
 
-    X X X
-
-</button>
-
-
-
-<div class="pagina">
-
-
-    <!-- =========================
-         MENU
-    ========================= -->
-
-    <nav class="menu" id="menu">
-
-        <a href="#inicio" class="logo">
-
-            XXXXXXXXXXXXXXXX
-
-        </a>
-
-
-        <ul class="navegacion">
-
+        <ul>
             <li>
-                <a href="#inicio">
-                    XXXXXXXXX
-                </a>
+                <a href="#inicio">Inicio</a>
             </li>
 
             <li>
-                <a href="#acerca">
-                    XXXXXXXXX
-                </a>
+                <a href="#diario">El viaje</a>
             </li>
 
             <li>
-                <a href="#proyectos">
-                    XXXXXXXXX
-                </a>
+                <a href="#galeria">Galerías</a>
             </li>
 
             <li>
-                <a href="#textos">
-                    XXXXXXXXX
-                </a>
+                <a href="#fotografias">Guanajuato</a>
             </li>
 
             <li>
-                <a href="#contacto">
-                    XXXXXXXXX
-                </a>
+                <a href="#contacto">Contacto</a>
             </li>
-
         </ul>
 
     </nav>
 
+    <main>
 
+        <!-- PORTADA -->
 
-    <!-- =========================
-         CONTENIDO
-    ========================= -->
-
-    <main class="contenido">
-
-
-        <!-- =========================
-             INICIO
-        ========================= -->
-
-        <section
-            id="inicio"
-            class="cabecera">
+        <section id="inicio" class="hero">
 
             <h1>
-
-                XXXXXXXXXXXXXXXXXXXXX
-
+                33 days<br>
+                in<br>
+                Guanajuato<br>
+                Capital
             </h1>
 
             <p>
-
-                XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-                XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-                XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-
+                Un viaje de treinta y tres días por las calles,
+                túneles, plazas, montañas y rincones de Guanajuato Capital.
             </p>
 
         </section>
 
 
+        <!-- EL VIAJE -->
 
-        <!-- =========================
-             ACERCA
-        ========================= -->
+        <section id="diario">
 
-        <section
-            id="acerca"
-            class="seccion">
+            <div class="text-section">
 
-            <h2>
+                <h2>
+                    El viaje
+                </h2>
 
-                XXXXXXXXXXXXX
+                <p>
+                    Treinta y tres días caminando por Guanajuato Capital,
+                    descubriendo una ciudad construida entre montañas,
+                    callejones y antiguas minas.
+                </p>
 
-            </h2>
+                <p>
+                    Cada día comienza en un lugar distinto. Una plaza,
+                    una calle estrecha, una escalera, un túnel o una
+                    vista desde las alturas.
+                </p>
 
-            <p>
-
-                XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-                XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-                XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-
-            </p>
-
-            <p>
-
-                XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-                XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-                XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-
-            </p>
-
-
-            <div class="imagen">
-
-                <span>
-                    XXXXXXXXX
-                </span>
+                <p>
+                    Este es un diario visual del camino: fotografías,
+                    lugares y momentos encontrados durante una estancia
+                    de treinta y tres días en Guanajuato.
+                </p>
 
             </div>
 
         </section>
 
 
+        <!-- GALERÍAS -->
 
-        <!-- =========================
-             PROYECTOS
-        ========================= -->
-
-        <section
-            id="proyectos"
-            class="seccion">
+        <section id="galeria">
 
             <h2>
-
-                XXXXXXXXXXXXX
-
+                Galerías del viaje
             </h2>
 
+            <div class="gallery">
 
-            <div class="rejilla">
+                <figure>
+                    <img src="1.jpg" alt="Calles de Guanajuato">
+                    <figcaption>01 — Las calles de Guanajuato</figcaption>
+                </figure>
 
+                <figure>
+                    <img src="2.jpg" alt="Callejones de Guanajuato">
+                    <figcaption>02 — Callejones y caminos</figcaption>
+                </figure>
 
-                <article class="caja">
+                <figure>
+                    <img src="3.jpg" alt="Centro de Guanajuato">
+                    <figcaption>03 — El centro de la ciudad</figcaption>
+                </figure>
 
-                    <h3>
-                        XXXXXXXXX
-                    </h3>
+                <figure>
+                    <img src="4.jpg" alt="Arquitectura de Guanajuato">
+                    <figcaption>04 — Arquitectura y memoria</figcaption>
+                </figure>
 
-                    <p>
+                <figure>
+                    <img src="5.jpg" alt="Montañas de Guanajuato">
+                    <figcaption>05 — Guanajuato entre montañas</figcaption>
+                </figure>
 
-                        XXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-                        XXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-                        XXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+                <figure>
+                    <img src="6.jpg" alt="Vida cotidiana">
+                    <figcaption>06 — La vida cotidiana</figcaption>
+                </figure>
 
-                    </p>
+                <figure>
+                    <img src="7.jpg" alt="Túneles de Guanajuato">
+                    <figcaption>07 — Túneles bajo la ciudad</figcaption>
+                </figure>
 
-                </article>
+                <figure>
+                    <img src="8.jpg" alt="Noche en Guanajuato">
+                    <figcaption>08 — Guanajuato de noche</figcaption>
+                </figure>
 
+                <figure>
+                    <img src="9.jpg" alt="Paisajes de Guanajuato">
+                    <figcaption>09 — Paisajes del camino</figcaption>
+                </figure>
 
-
-                <article class="caja">
-
-                    <h3>
-                        XXXXXXXXX
-                    </h3>
-
-                    <p>
-
-                        XXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-                        XXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-                        XXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-
-                    </p>
-
-                </article>
-
-
-
-                <article class="caja">
-
-                    <h3>
-                        XXXXXXXXX
-                    </h3>
-
-                    <p>
-
-                        XXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-                        XXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-                        XXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-
-                    </p>
-
-                </article>
-
+                <figure>
+                    <img src="10.jpg" alt="Últimos días en Guanajuato">
+                    <figcaption>10 — Los últimos días</figcaption>
+                </figure>
 
             </div>
 
         </section>
 
 
+        <!-- GUANAJUATO -->
 
-        <!-- =========================
-             TEXTOS
-        ========================= -->
-
-        <section
-            id="textos"
-            class="seccion">
+        <section id="fotografias">
 
             <h2>
-
-                XXXXXXXXXXXXX
-
+                Guanajuato, ciudad abierta
             </h2>
 
+            <div class="wide-image">
 
-            <p>
+                <img src="10.jpg" alt="Guanajuato Capital">
 
-                XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-                XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-                XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-                XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+            </div>
 
-            </p>
+            <div class="text-section">
 
+                <p>
+                    Guanajuato aparece poco a poco: detrás de una esquina,
+                    al final de un callejón, sobre un puente o desde una
+                    montaña. La ciudad cambia constantemente mientras uno
+                    camina por ella.
+                </p>
 
-            <p>
+                <p>
+                    Treinta y tres días pueden parecer mucho tiempo,
+                    pero una ciudad como Guanajuato siempre conserva
+                    algún lugar que todavía no hemos visto.
+                </p>
 
-                XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-                XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-                XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-                XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-
-            </p>
-
-
-            <a
-                href="#"
-                class="boton">
-
-                XXXXXXXXX
-
-            </a>
+            </div>
 
         </section>
 
 
+        <!-- CONTACTO -->
 
-        <!-- =========================
-             CONTACTO
-        ========================= -->
-
-        <section
-            id="contacto"
-            class="seccion">
+        <section id="contacto" class="contact">
 
             <h2>
-
-                XXXXXXXXXXXXX
-
+                Contacto
             </h2>
 
             <p>
-
-                XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-
+                Para comentarios, colaboraciones o información sobre
+                el proyecto:
             </p>
-
 
             <p>
-
-                XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-
+                <a href="mailto:felipedejesusgarciapatino@proton.me">
+                    felipedejesusgarciapatino@proton.me
+                </a>
             </p>
 
-
-            <a
-                href="#"
-                class="boton">
-
-                XXXXXXXXXXXXX
-
-            </a>
-
         </section>
-
-
-
-        <!-- =========================
-             FOOTER
-        ========================= -->
-
-        <footer>
-
-            XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-
-        </footer>
-
 
     </main>
 
-</div>
 
+    <script>
 
+        function toggleMenu() {
 
-<!-- =========================
-     JAVASCRIPT
-========================= -->
+            const menu = document.getElementById("navigation");
 
-<script>
+            menu.classList.toggle("open");
 
-    function abrirMenu() {
+        }
 
-        const menu =
-            document.getElementById("menu");
+        document.querySelectorAll("nav a").forEach(function(link) {
 
-        menu.classList.toggle("abierto");
+            link.addEventListener("click", function() {
 
-    }
+                document
+                    .getElementById("navigation")
+                    .classList.remove("open");
 
-
-    /*
-       Cierra el menú automáticamente
-       cuando se pulsa un enlace.
-    */
-
-    document
-        .querySelectorAll(".navegacion a")
-        .forEach(function(enlace) {
-
-            enlace.addEventListener(
-                "click",
-                function() {
-
-                    document
-                        .getElementById("menu")
-                        .classList.remove("abierto");
-
-                }
-            );
+            });
 
         });
 
-</script>
-
+    </script>
 
 </body>
-
 </html>
